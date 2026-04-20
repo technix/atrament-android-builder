@@ -7,10 +7,10 @@ ARG OPENJDK_VERSION
 #https://github.com/nodesource/distributions/blob/master/README.md
 ARG NODEJS_VERSION=24
 #https://gradle.org/releases/
-ARG GRADLE_VERSION=8.13
+ARG GRADLE_VERSION=8.14.2
 #https://www.npmjs.com/package/cordova?activeTab=versions
 ARG CORDOVA_VERSION=13.0.0
-#https://developer.android.com/studio#command-tools
+#https://developer.android.com/studio#command-line-tools-only
 ARG ANDROID_CMDTOOLS_VERSION=14742923
 
 LABEL maintainer="Serhii Mozhaiskyi <sergei.mozhaisky@gmail.com>"
