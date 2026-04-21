@@ -13,20 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: [actions/checkout@v4](https://github.com)
+        uses: actions/checkout@v4
 
       - name: Log in to Docker Hub
-        uses: [docker/login-action@v3](https://github.com/marketplace/actions/docker-login)
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Set up Docker Buildx
-        uses: [docker/setup-buildx-action@v3](https://github.com/marketplace/actions/docker-setup-buildx)
-
       - name: Build and push
-        uses: [docker/build-push-action@v6](https://github.com/marketplace/actions/build-and-push-docker-images)
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: true
-          tags: frenzytechnix/atrament-android-builder:latest
+          tags: frenzytechnix/atrament-android-builder:${{ github.event.inputs.tag }}
